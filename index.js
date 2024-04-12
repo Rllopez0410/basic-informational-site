@@ -8,7 +8,6 @@ http.createServer(function(req, res) {
     fs.readFile(fileName, function(err, data) {
         if (err) {
             if (err.code === 'ENOENT') {
-                // File not found, serve err.html
                 fs.readFile("./err.html", function(err, data) {
                     if (err) throw err;
                     res.writeHead(404, {"Content-Type": "text/html"});
